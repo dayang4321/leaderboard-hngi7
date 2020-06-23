@@ -6,8 +6,9 @@ const Layout = props => {
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+  base: {
+        flexGrow: 1,
+     
   },
 
   title: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
         return (
             <div>
-                 <div className={classes.root}>
+                 <div style={{marginBottom:'5px'}} className={classes.base}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>

@@ -28,7 +28,9 @@ const Leaderboard = (props) => {
 
     
    const columns =  [
-    { title: 'Name', field: 'name', },
+    { title: 'Name', field: 'name', headerStyle: {
+        width: '200',
+      }},
     { title: 'Username', field: 'username' },
        { title: 'Email', field: 'email'},
        { title: 'Points', field: 'points', },
@@ -79,10 +81,20 @@ const Leaderboard = (props) => {
       }
 
   return (
-    <MaterialTable
+    <MaterialTable style={{padding:'10px'}}
       title="The Board"
       columns={columns}
           data={dataState.data}
+
+          options={{
+            rowStyle: {
+                padding: '1rem',
+                borderRadius: '5px',
+                boxShadow: ' 0 2.8px 2.2px rgba(0, 0, 0, 0.034)',
+               
+              
+            }
+          }}
          
       editable={props.isAuth? editable:null}
     />
