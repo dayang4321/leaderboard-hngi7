@@ -43,7 +43,7 @@ const Leaderboard = (props) => {
 
   return (
     <MaterialTable
-      title="Editable Example"
+      title="The Board"
       columns={columns}
       data={dataState.data}
       editable={{
