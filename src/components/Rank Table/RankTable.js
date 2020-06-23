@@ -23,19 +23,22 @@ const Leaderboard = (props) => {
 
           }
       )
-  }, [])  
+    }, [dataState])  
     
-    
+
     
    const columns =  [
-    { title: 'Name', field: 'name' },
+    { title: 'Name', field: 'name', headerStyle: {
+        backgroundColor: '#039be5',
+      } },
     { title: 'Username', field: 'username' },
        { title: 'Email', field: 'email'},
        { title: 'Points', field: 'points', },
     {
       title: 'track', field: 'track',
       lookup: { 1: 'Frontend', 2: 'Backend' , 3: 'Design',  4: 'Mobile' },
-    },
+       },
+      
   ]
 
   return (
@@ -70,7 +73,8 @@ const Leaderboard = (props) => {
           }),
         onRowDelete: (oldData) =>
           new Promise((resolve) => {
-            setTimeout(() => {
+              setTimeout(() => {
+                
               resolve();
               setDataState((prevState) => {
                 const data = [...prevState.data];
