@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AuthContextProvider from './context/AuthContext';
+import './index.css'
 
 ReactDOM.render(
-
-    <App />,
+  <AuthContextProvider>
+    <App />
+  </AuthContextProvider>,
  
   document.getElementById('root')
 );

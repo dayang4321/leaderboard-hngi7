@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
           <Typography variant="h6" className={classes.title}>
             HNGi7 LeaderBoard
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button onClick={props.clicked} color="inherit">Admin</Button>
         </Toolbar>
       </AppBar>
     </div>

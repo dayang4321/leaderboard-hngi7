@@ -28,9 +28,7 @@ const Leaderboard = (props) => {
 
     
    const columns =  [
-    { title: 'Name', field: 'name', headerStyle: {
-        backgroundColor: '#039be5',
-      } },
+    { title: 'Name', field: 'name', },
     { title: 'Username', field: 'username' },
        { title: 'Email', field: 'email'},
        { title: 'Points', field: 'points', },
@@ -39,14 +37,9 @@ const Leaderboard = (props) => {
       lookup: { 1: 'Frontend', 2: 'Backend' , 3: 'Design',  4: 'Mobile' },
        },
       
-  ]
-
-  return (
-    <MaterialTable
-      title="The Board"
-      columns={columns}
-      data={dataState.data}
-      editable={{
+    ]
+    
+    const editable = {
         onRowAdd: (newData) =>
           new Promise((resolve) => {
             setTimeout(() => {
@@ -83,7 +76,15 @@ const Leaderboard = (props) => {
               });
             }, 600);
           }),
-      }}
+      }
+
+  return (
+    <MaterialTable
+      title="The Board"
+      columns={columns}
+          data={dataState.data}
+         
+      editable={props.isAuth? editable:null}
     />
   );
 }
